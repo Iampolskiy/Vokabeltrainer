@@ -31,9 +31,9 @@ export default function TestPage() {
             {translations.map(({ id, original, translation }) => (
                 <div className="" key={id}>
                     <div className="original">{original}</div>
-                    <br />
+                    <p className="center">{results[id]}</p>
                     <div className="testCenter">
-                        <form className="" /*evtl. besser relative */ onSubmit={(e: FormEvent) => e.preventDefault()}>
+                        <form className="w90" /*evtl. besser relative */ onSubmit={(e: FormEvent) => e.preventDefault()}>
                             <input
                                 className="wordCheckInput"
                                 type="text"
@@ -42,9 +42,7 @@ export default function TestPage() {
                             <button className="wordCheckBtn " /*evtl. besser absolute */ id={id} onClick={() => handleSubmit(id, original, translation)}>
                                 Prüfen
                             </button>
-                            <p>{results[id]}</p>
                         </form>
-                        <br />
                     </div>
                 </div>
             ))}

@@ -77,7 +77,7 @@ export default function LenrPage() {
                 <div className="center mtMax mbMax">
                     <form className="center" action="" onSubmit={(e) => e.preventDefault()}>
                         <input type="text" className="wordInput " /*evtl. besser relative */ ref={inputRef} />
-                        <button className="wordInputBtn " /*evtl. besser relative */ onClick={handleClick}>+</button>
+                        <button className="wordInputBtn" /*evtl. besser relative */ onClick={handleClick}>+</button>
                     </form>
                 </div>
             </div>

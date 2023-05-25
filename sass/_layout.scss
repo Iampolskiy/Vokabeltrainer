@@ -63,11 +63,11 @@ body {
 }
 
 .removeBtn {
+  cursor: pointer;
   border-left: 1px solid black;
   font-size: 5rem;
   color: greenyellow;
-  border-color: rgb(184, 220, 130);
-  padding-top: 11px;
+  border-color: black;
   transition: color 0.3s ease;
   grid-area: removeBtn;
   background-color: white
@@ -81,6 +81,7 @@ body {
 .svgRemove {
   margin: 0 auto;
   display: flex;
+  height: 100%;
 }
 
 .translationWord {
@@ -150,6 +151,7 @@ body {
 }
 
 .wordInputBtn {
+  cursor: pointer;
   transition: color 0.4s ease;
   width: 20%;
   height: 6rem;
@@ -172,31 +174,33 @@ body {
 }
 
 .wordCheckInput {
-  padding: 8px 0 8px 0;
+  padding: 16px;
   transition: color 0.8s ease;
-  border: 0.3rem solid black;
-  border-radius: 25px;
-  font-size: 3rem;
+  width: 70%;
+  border-radius: 16px;
+  font-size: 2rem;
   color: black;
-  padding: 16px 32px 16px 32px;
+  /* padding: 16px 32px 16px 32px; */
 }
 
-.wordCheckInput:focus {
+/* .wordCheckInput:focus {
   background-color: rgb(0, 0, 0);
   color: white;
-}
+} */
 
 .wordCheckBtn {
+  margin-left: 10px;
+  margin-top: 1rem;
+  padding: 1rem;
+  cursor: pointer;
   transition: color 0.4s ease;
-  border: 0.3rem solid black;
-  margin-left: 16px;
-  border-radius: 25px;
-  font-size: 3rem;
-  color: black;
-  height: 6rem;
-  width: 200px;
+  /* border: 0.15rem solid black; */
+  border-radius: 16px;
+  font-size: 2rem;
+  width: 20%;
   font-family: monospace;
   background-color: aliceblue;
+  margin-bottom: 10rem;
 }
 
 .wordCheckBtn:hover {
@@ -251,6 +255,22 @@ body {
   justify-content: center;
 }
 
+.w50 {
+  width: 50%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w90 {
+  width: 90%;
+}
+
+.w100 {
+  width: 100%;
+}
+
 
 
 /* madia-queries */
@@ -274,12 +294,23 @@ body {
     margin: 0px;
     width: 100%;
     margin-top: 16px;
+    margin-bottom: 10rem;
   }
 }
 
 
 @media (max-width: 790px) {
   /* lernen */
+
+  .input {
+    border-right: none;
+    border-bottom: 0.1px solid black;
+  }
+
+  .removeBtn {
+    border-left: none;
+    border-top: 0.1px solid black;
+  }
 
   .center form {
     flex-direction: column;
@@ -305,8 +336,9 @@ body {
       align-items: center;
     }
   
-    .center form .wordCheckBtn {
+     .wordCheckBtn {
       margin-top: 10px;
+      margin-bottom: 10rem;
     }
 }
 
@@ -317,6 +349,11 @@ body {
       width: 100%;
       margin-top: 16px;
     }
+  }
+
+  .wordCheckBtn {
+    margin-top: 10px;
+    margin-bottom: 10rem;
   }
 
 }
