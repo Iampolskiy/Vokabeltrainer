@@ -11,7 +11,7 @@ export default function LenrPage() {
     const [value, setValue] = useState(""); //value word für api
     const { translations, setTranslations } = useTranslationContext();
     
-    const apiKey = "92d3f9c3-b146-aa3b-8e0f-b79dd268ae66:fx";
+    
     const wordRef = useRef(null);
 
     async function handleClick() {
