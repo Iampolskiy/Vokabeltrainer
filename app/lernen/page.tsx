@@ -40,6 +40,7 @@ export default function LenrPage() {
                 { original: word, id: crypto.randomUUID(), translation: translatedWord },
             ];
             setTranslations(newTranslations);
+            inputRef.current.value = ""; // Leeren des Input-Felds nach dem Hinzufügen
         } catch (error) {
             console.log(error);
         }
