@@ -1,0 +1,332 @@
+@use "globals" as *;
+
+body {
+  background-color: var(--background-color);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+
+.mtMax {
+  margin-top: 5vh;
+}
+
+.mbMax {
+  margin-bottom: 10vh;
+}
+
+.translationOutput {
+  background-color: #f0f8ff;
+  /* margin: 1rem;
+  border: 0.5px solid gray;
+  border-radius: 25px;
+  padding: 32px; */
+}
+
+.translationOutputCenter {
+  display: grid;
+  grid-template-areas: 
+  "input output removeBtn";
+  grid-template-columns: 40% 40% 1fr;
+  grid-gap: 10px;
+  background-color: white;
+}
+
+.input {
+  border-right: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  grid-area: input;
+  padding: 16px;
+  word-wrap: break-word;
+  /* color: white; */
+}
+
+.output {
+  background-color: rgb(255, 255, 255);
+  grid-area: output;
+  padding: 16px;
+  word-wrap: break-word;
+}
+
+.removeBtn {
+  border-left: 1px solid black;
+  font-size: 5rem;
+  color: greenyellow;
+  border-color: rgb(184, 220, 130);
+  padding-top: 11px;
+  transition: color 0.3s ease;
+  grid-area: removeBtn;
+  background-color: white
+}
+
+.removeBtn:hover {
+  color: red;
+  border-color: rgb(60, 129, 47);
+}
+
+.svgRemove {
+  margin: 0 auto;
+  display: flex;
+}
+
+.translationWord {
+  max-width: 330px;
+  min-width: 200px;
+  font-size: 3rem;
+}
+
+.translationWrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20vw;
+}
+
+.translationWrapperElement {
+  width: 30%;
+}
+
+
+.lang {
+  font-size: 0.8rem; 
+}
+
+.translatedText {
+  font-size: 2.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  width: 25%;
+  font-size: larger;
+  font-family: monospace;
+  text-decoration: none;
+  margin-top: 1%;
+  border: 0.3rem solid black;
+  border-radius: 25px;
+  padding: 1rem;
+  color: black;
+  background-color: aliceblue;
+  transition: color 0.5s ease;
+}
+
+.link:hover {
+  background-color: black;
+  border-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+.wordInput {
+  transition: color 0.8s ease;
+  border: 0.3rem solid black;
+  border-radius: 25px;
+  font-size: 3rem;
+  color: black;
+  padding: 16px 32px 16px 32px;
+  width: 80%;
+}
+
+.wordInput:focus {
+  background-color: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
+  color: white
+}
+
+.wordInputBtn {
+  transition: color 0.4s ease;
+  width: 20%;
+  height: 6rem;
+  border: 0.3rem solid black;
+  margin-left: 16px;
+  border: 0.3rem solid black;
+  border-radius: 25px;
+  font-size: 3rem;
+  color: black;
+  background-color: aliceblue;
+  /* top: 432px;
+  left: 100px;
+  position: absolute; */
+}
+
+.wordInputBtn:hover {
+  background-color: black;
+  border-color: white;
+  color: greenyellow;
+}
+
+.wordCheckInput {
+  padding: 8px 0 8px 0;
+  transition: color 0.8s ease;
+  border: 0.3rem solid black;
+  border-radius: 25px;
+  font-size: 3rem;
+  color: black;
+  padding: 16px 32px 16px 32px;
+}
+
+.wordCheckInput:focus {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.wordCheckBtn {
+  transition: color 0.4s ease;
+  border: 0.3rem solid black;
+  margin-left: 16px;
+  border-radius: 25px;
+  font-size: 3rem;
+  color: black;
+  height: 6rem;
+  width: 200px;
+  font-family: monospace;
+  background-color: aliceblue;
+}
+
+.wordCheckBtn:hover {
+  background-color: black;
+  border-color: white;
+  color: yellowgreen;
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+}
+
+.bgGray {
+  background-color: gray;
+}
+
+.error {
+  color: red;
+  border: 1px solid red;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+
+.original {
+  color: black;
+  font-size: 4rem;
+  font-family: monospace;;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.centerColumn {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.spacer {
+  margin-bottom: 10px;
+}
+
+.auto {
+  margin: 0 auto;
+}
+
+.testCenter {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* madia-queries */
+/* 930 class "test" muss unter dem InputFeld sein */
+/* 760 inputBtn nicht mehr rechts sondern unter dem inputFeld */
+/* 560 */
+
+
+@media (max-width: 930px) {
+  /* testen */
+  .test {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wordCheckInput {
+    width: 100%;
+  }
+
+  .wordCheckBtn {
+    margin: 0px;
+    width: 100%;
+    margin-top: 16px;
+  }
+}
+
+
+@media (max-width: 790px) {
+  /* lernen */
+
+  .center form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .center form .wordInputBtn {
+    margin-top: 10px;
+  }
+
+  .wordInputBtn {
+    margin-left: 0px;
+    width: 80%;
+  }
+
+  .translationOutputCenter {
+    display: block;
+  }
+
+  /* testen */
+    .relative {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .center form .wordCheckBtn {
+      margin-top: 10px;
+    }
+}
+
+@media (max-width: 560px) {
+  .header {
+    display: block;
+    .link {
+      width: 100%;
+      margin-top: 16px;
+    }
+  }
+
+}
+
+
+
+/* .translationOutputCenter {
+  display: grid;
+  grid-template-areas: 
+  "input output removeBtn";
+  grid-template-columns: 45% 45% 1fr;
+  grid-gap: 10px;
+} */
