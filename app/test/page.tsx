@@ -6,7 +6,7 @@ type Results = String
 export default function TestPage() {
     const { translations, setTranslations } = useTranslationContext();
     const [userAnswers, setUserAnswers] = useState({});
-    const [results, setResults] = useState<Results>({});
+    const [results, setResults] = useState({});
     
     function handleInputChange(original: string, event: any, id:string) {
         const newInputValue = { ...userAnswers, [original]: event.target.value, [id]: id };
