@@ -61,8 +61,8 @@ export default function RootLayout({
     >
       {/* Mit Supabase die SupabaseProvider-Komponente um children ergänzen */}
       <body>
-        <Header />
           <LangContextProvider>
+        <Header />
             <TranslationContextProvider>{children}</TranslationContextProvider>
           </LangContextProvider>
       </body>
