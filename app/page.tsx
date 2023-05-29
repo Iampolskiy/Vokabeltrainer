@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { useLangContext } from "@/components/LangContext";
 
-export const metadata = {
+/* export const metadata = {
   title: "Vokabeltrainer!",
   description: "Vokabeln lernen und abfragen",
 };
-
+ */
 export default function Home() {
   const { lang, setLang } = useLangContext();
   
