@@ -31,7 +31,7 @@ export default function Home() {
         </form>
         <div className="auto center">
           <Link className="center link" href={"/lernen"}>
-            Los gehts
+            Start
           </Link>
         </div>
       </div>
