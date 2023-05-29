@@ -1,7 +1,7 @@
 import { LangContextProvider } from "@/components/LangContext";
 import { TranslationContextProvider } from "@/components/TranslationContext";
 
-import Link from "next/link";
+
 
 
 type Props = {

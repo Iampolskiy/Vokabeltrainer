@@ -21,7 +21,7 @@ export default function Home() {
         <h2 className="center">{lang}</h2>
         <form action="">
           <label className="center" htmlFor="lang">Sprache:</label>
-          <select className="center  m0auto langInput" onChange={(e) => setLang(e.target.value)} id="lang" name="lang">
+          <select className="center m0auto langInput" value={lang} onChange={(e) => setLang(e.target.value)} id="lang" name="lang">
             <option value="EN">English</option>
             <option value="RU">Русский</option>
             <option value="FR">Français</option>

@@ -6,6 +6,7 @@ import {useRef, useState} from "react";
 import { useTranslationContext } from "@/components/TranslationContext";
 import { TiDelete } from "react-icons/ti";
 import { useLangContext } from "@/components/LangContext";
+import { log } from "console";
 
 export default function LenrPage() {
     const inputRef = useRef<HTMLInputElement>(null!); //InputFeld Wert
@@ -13,13 +14,12 @@ export default function LenrPage() {
     const { translations, setTranslations } = useTranslationContext();
     const { lang, setLang } = useLangContext();
     console.log(lang);
+    setLang(lang);
     const apiKey = process.env.NEXT_PUBLIC_API_KEY
     const wordRef = useRef(null);
-    
-   /*  if (lang === " ") {
-        setLang("FR")
-    } */
     async function handleClick() {
+        console.log(lang);
+        setLang(lang);
         const word = inputRef.current.value;
         /* const language = "EN"; */
         const language = lang;

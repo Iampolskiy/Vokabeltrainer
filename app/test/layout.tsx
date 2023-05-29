@@ -1,5 +1,3 @@
-/* import { LangContextProvider } from "@/components/LangContext"; */
-
 type Props = {
     children: React.ReactNode;
 };
