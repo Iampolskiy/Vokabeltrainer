@@ -7,9 +7,30 @@ import { useLangContext } from "@/components/LangContext";
   title: "Vokabeltrainer!",
   description: "Vokabeln lernen und abfragen",
 };
- */
+*/
 export default function Home() {
   const { lang, setLang } = useLangContext();
+  
+  function showLang(lang:String) {
+    switch(lang) {
+      case "EN":
+      return "Englisch"
+      break;
+      case "ES":
+      return "Spanisch"
+      break;
+      case "RU":
+      return "Russisch"
+      break;
+      case "ZH":
+      return "Chinesisch"
+      break;
+      case "FR":
+      return "Französisch"
+      break;
+    }
+    return lang
+  }
   
   return (
     <main>
@@ -18,7 +39,7 @@ export default function Home() {
         <h3 className="center title">
           Hier kannst du Vokablen lernen und abfragen
         </h3>
-        <h2 className="center">{lang}</h2>
+        <h2 className="center">{showLang(lang)}</h2>
         <form action="">
           <label className="center" htmlFor="lang">Sprache:</label>
           <select className="center m0auto langInput" value={lang.toString()} onChange={(e) => setLang(e.target.value)} id="lang" name="lang">

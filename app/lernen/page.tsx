@@ -43,6 +43,9 @@ export default function LenrPage() {
                 }
             );
             const translatedWord = data.translations[0].text;
+            const translatLang = data.translations[0].detected_source_language;
+            console.log(language);
+            
             const newTranslations = [
                 ...translations,
                 { original: word, id: crypto.randomUUID(), translation: translatedWord },
@@ -100,7 +103,7 @@ export default function LenrPage() {
                                         <div className="translatedText">{original}</div>
                                     </div>
                                     <div className="output">
-                                        <span className="lang">{lang} </span>
+                                        <span className="lang">{lang}</span>
                                         <div className="translatedText">{translation}</div>
                                     </div>
                                     <div className="removeBtn" onClick={() => removeWord(id)}>
