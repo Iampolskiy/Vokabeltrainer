@@ -3,6 +3,7 @@ Wenn man größere Mengen spezifischer Styles hat, kann man
 auch in einzelnen page- bzw. Komponenten-Dateien css oder
 scss-Dateien importieren.
 */
+import { LangContextProvider } from "@/components/LangContext";
 import { TranslationContextProvider } from "@/components/TranslationContext";
 import "../sass/style.scss";
 
@@ -61,7 +62,9 @@ export default function RootLayout({
       {/* Mit Supabase die SupabaseProvider-Komponente um children ergänzen */}
       <body>
         <Header />
-        <TranslationContextProvider>{children}</TranslationContextProvider>
+          <LangContextProvider>
+            <TranslationContextProvider>{children}</TranslationContextProvider>
+          </LangContextProvider>
       </body>
     </html>
   );

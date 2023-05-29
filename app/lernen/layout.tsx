@@ -1,4 +1,8 @@
+import { LangContextProvider } from "@/components/LangContext";
+import { TranslationContextProvider } from "@/components/TranslationContext";
+
 import Link from "next/link";
+
 
 type Props = {
     children: React.ReactNode;
@@ -6,4 +10,5 @@ type Props = {
 
 export default function layout({ children }: Props) {
     return <div>{children}</div>;
+    
 }

@@ -5,19 +5,27 @@ import type { ApiResponse, Word, TranslatedWord } from "@/types/axios-type";
 import {useRef, useState} from "react";
 import { useTranslationContext } from "@/components/TranslationContext";
 import { TiDelete } from "react-icons/ti";
+import { useLangContext } from "@/components/LangContext";
 
 export default function LenrPage() {
     const inputRef = useRef<HTMLInputElement>(null!); //InputFeld Wert
     const [value, setValue] = useState(""); //value word für api
     const { translations, setTranslations } = useTranslationContext();
-    
+    const { lang, setLang } = useLangContext();
+    console.log(lang);
     const apiKey = process.env.NEXT_PUBLIC_API_KEY
     const wordRef = useRef(null);
     
-
+   /*  if (lang === " ") {
+        setLang("FR")
+    } */
     async function handleClick() {
         const word = inputRef.current.value;
-        const language = "EN";
+        /* const language = "EN"; */
+        const language = lang;
+        console.log(lang);
+        
+        
         setValue(word);
         if (word.length < 2) {
             return;
@@ -88,11 +96,11 @@ export default function LenrPage() {
                             <div className="">
                                 <div className="translationOutputCenter">
                                     <div className="input">
-                                        <span className="lang">Deutsch: </span>
+                                        <span className="lang">Deutsch </span>
                                         <div className="translatedText">{original}</div>
                                     </div>
                                     <div className="output">
-                                        <span className="lang">Englisch: </span>
+                                        <span className="lang">{lang} </span>
                                         <div className="translatedText">{translation}</div>
                                     </div>
                                     <div className="removeBtn" onClick={() => removeWord(id)}>
