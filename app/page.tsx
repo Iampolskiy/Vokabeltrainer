@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import { useState } from "react";
+/* import { useState } from "react"; */
 import { useLangContext } from "@/components/LangContext";
 
 export const metadata = {
@@ -10,10 +10,7 @@ export const metadata = {
 };
 
 export default function Home() {
-  
   const { lang, setLang } = useLangContext();
-  
-  console.log(lang);
   
   return (
     <main>
