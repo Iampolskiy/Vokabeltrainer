@@ -39,9 +39,10 @@ export default function Home() {
         <h3 className="center title">
           Hier kannst du Vokablen lernen und abfragen
         </h3>
-        <h2 className="center">{showLang(lang)}</h2>
+        
         <form action="">
           <label className="center" htmlFor="lang">Sprache:</label>
+          <h2 className="center">{showLang(lang)}</h2>
           <select className="center m0auto langInput" value={lang.toString()} onChange={(e) => setLang(e.target.value)} id="lang" name="lang">
             <option value="EN">English</option>
             <option value="RU">Русский</option>
