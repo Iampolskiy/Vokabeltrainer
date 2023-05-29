@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link";
-/* import { useState } from "react"; */
 import { useLangContext } from "@/components/LangContext";
 
 export const metadata = {
@@ -20,7 +19,7 @@ export default function Home() {
           Hier kannst du Vokablen lernen und abfragen
         </h3>
         <h2 className="center">{lang}</h2>
-       {/*  <form action="">
+        <form action="">
           <label className="center" htmlFor="lang">Sprache:</label>
           <select className="center  m0auto langInput" onChange={(e) => setLang(e.target.value)} id="lang" name="lang">
             <option value="EN">English</option>
@@ -29,7 +28,7 @@ export default function Home() {
             <option value="ES">Español</option>
             <option value="ZH">中国人</option>
           </select>
-        </form> */}
+        </form>
         <div className="auto center">
           <Link className="center link" href={"/lernen"}>
             Los gehts
