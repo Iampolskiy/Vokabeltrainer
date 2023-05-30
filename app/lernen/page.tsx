@@ -13,17 +13,17 @@ export default function LenrPage() {
     const [value, setValue] = useState(""); //value word für api
     const { translations, setTranslations } = useTranslationContext();
     const { lang, setLang } = useLangContext();
-    console.log(lang);
+    /* console.log(lang); */
     setLang(lang);
     const apiKey = process.env.NEXT_PUBLIC_API_KEY
     const wordRef = useRef(null);
     async function handleClick() {
-        console.log(lang);
+        /* console.log(lang); */
         setLang(lang);
         const word = inputRef.current.value;
         /* const language = "EN"; */
         const language = lang;
-        console.log(lang);
+        /* console.log(lang); */
         
         
         setValue(word);
@@ -43,8 +43,8 @@ export default function LenrPage() {
                 }
             );
             const translatedWord = data.translations[0].text;
-            const translatLang = data.translations[0].detected_source_language;
-            console.log(language);
+            const translatLang = data;
+            console.log(translatLang);
             
             const newTranslations = [
                 ...translations,
@@ -88,7 +88,7 @@ export default function LenrPage() {
                 </div>
                 <div className="center mtMax mbMax">
                     <form className="center" action="" onSubmit={(e) => e.preventDefault()}>
-                        <input type="text" className="wordInput " /*evtl. besser relative */ ref={inputRef} />
+                        <input placeholder="Bitte hier eingeben" type="text" className="wordInput " /*evtl. besser relative */ ref={inputRef} />
                         <button className="wordInputBtn" /*evtl. besser relative */ onClick={handleClick}>+</button>
                     </form>
                 </div>
@@ -103,7 +103,7 @@ export default function LenrPage() {
                                         <div className="translatedText">{original}</div>
                                     </div>
                                     <div className="output">
-                                        <span className="lang">{lang}</span>
+                                    <span className="lang">Übersetzung</span>
                                         <div className="translatedText">{translation}</div>
                                     </div>
                                     <div className="removeBtn" onClick={() => removeWord(id)}>

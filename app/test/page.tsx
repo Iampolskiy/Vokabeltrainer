@@ -18,7 +18,7 @@ export default function TestPage() {
 
     function handleSubmit(id: string, original: string, translation: string) {
         const translationObj = translations.find((item) => item.id === id);
-        if (translationObj && userAnswers[original] === translationObj.translation) {
+        if (translationObj && userAnswers[original].toUpperCase() === translationObj.translation.toUpperCase()) {
             setResults((prevResults) => ({ ...prevResults, [id]: "Richtig" }));
         } else if (translationObj && userAnswers[original] !== translationObj.translation) {
             setResults((prevResults) => ({ ...prevResults, [id]: "Falsch" }));
@@ -33,7 +33,7 @@ export default function TestPage() {
                     <div className="original">{original}</div>
                     <p className="center">{results[id]}</p>
                     <div className="testCenter">
-                        <form className="w90" /*evtl. besser relative */ onSubmit={(e: FormEvent) => e.preventDefault()}>
+                        <form className="w90 txtcenter" /*evtl. besser relative */ onSubmit={(e: FormEvent) => e.preventDefault()}>
                             <input
                                 className="wordCheckInput"
                                 type="text"
